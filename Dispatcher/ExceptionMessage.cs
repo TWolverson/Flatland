@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Messaging
+{
+    public class ExceptionMessage : Message
+    {
+        private Exception _exception;
+
+        public Exception Exception { get { return _exception; } }
+
+        public ExceptionMessage(Exception exception)
+        {
+            _exception = exception;
+        }
+    }
+}
