@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Flatland
@@ -16,11 +17,11 @@ namespace Flatland
             this.bus = bus;
             var centreTop = canvas.ActualHeight / 2;
             var centreLeft = canvas.ActualWidth / 2;
-            var bot = new Bot(bus);
+            var bot = new Bot(bus, new Point(centreLeft, centreTop));
             for (int i = 1; i <= 6; i++)
             {
                 var angle = ((double)i / 6) * Math.PI * 2;
-                var waypoint = new Waypoint(bus, centreLeft + 100 * Math.Sin(angle), centreTop + 100 * Math.Cos(angle));
+                var waypoint = new Waypoint(bus, new Point(centreLeft + 100 * Math.Sin(angle), centreTop + 100 * Math.Cos(angle)));
                 bot.AddWaypoint(waypoint);
             }
             var manager = new TimeManager(bus);

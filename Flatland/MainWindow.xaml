@@ -8,6 +8,16 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="canvas" Loaded="canvas_Loaded">
+            <Polygon Stroke="Black" Name="poly">
+                <Polygon.Points>
+                    <Point X="10" Y="10"></Point>
+                    <Point X="15" Y="25"></Point>
+                    <Point X="20" Y="10"></Point>
+                </Polygon.Points>
+                <Polygon.RenderTransform>
+                    <RotateTransform CenterX="5" CenterY="5" Angle="60"/>
+                </Polygon.RenderTransform>
+            </Polygon>
         </Canvas>
     </Grid>
 </Window>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -13,14 +14,13 @@ namespace Flatland
     public class Waypoint : IHandle<TickMessage>
     {
         private readonly IBus bus;
-        public double centreLeft;
-        public double centreTop;
 
-        public Waypoint(IBus bus, double centreLeft, double centreTop)
+        public Point Position { get; private set; }
+
+        public Waypoint(IBus bus, Point position)
         {
             this.bus = bus;
-            this.centreLeft = centreLeft;
-            this.centreTop = centreTop;
+            this.Position = position;
             var ellipse = new Ellipse();
             ellipse.Width = 5;
             ellipse.Height = 5;
@@ -31,8 +31,8 @@ namespace Flatland
                 DrawAction = canvas =>
                 {
                     canvas.Children.Add(ellipse);
-                    Canvas.SetLeft(ellipse, centreLeft);
-                    Canvas.SetTop(ellipse, centreTop);
+                    Canvas.SetLeft(ellipse, position.X);
+                    Canvas.SetTop(ellipse, position.Y);
                 }
             });
 

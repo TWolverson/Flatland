@@ -60,6 +60,8 @@
     <Compile Include="RenderMessage.cs" />
     <Compile Include="TickMessage.cs" />
     <Compile Include="TimeManager.cs" />
+    <Compile Include="UpdateHeadingMessage.cs" />
+    <Compile Include="UpdateHeadingRequestMessage.cs" />
     <Compile Include="UpdatePositionRequestMessage.cs" />
     <Compile Include="UpdatePositionMessage.cs" />
     <Compile Include="Waypoint.cs" />
